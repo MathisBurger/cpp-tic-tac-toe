@@ -1,7 +1,8 @@
-#include <iostream>
+#include "Entities/Playground.h"
 
 int main()
 {
-    std::cout<<"Hello, World!"<<std::endl;
+    Playground playground = Playground();
+    playground.printPlayground();
     return 0;
 }
