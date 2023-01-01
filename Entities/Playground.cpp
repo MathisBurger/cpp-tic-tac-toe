@@ -6,21 +6,27 @@
 #include <iostream>
 #include <string>
 
-/*
+/**
  * Inits empty playground
  */
 Playground::Playground() {
     *this->fields = new int[]{0,0,0,0,0,0,0,0,0};
 }
 
+/**
+ * Prints the whole playground to the CLI.
+ */
 void Playground::printPlayground() {
-    std::cout << "= = = = = = = = = = =" << std::endl;
-    for (int r=0; r<3; r++) {
-        std::string row = "";
-        for (int i=1; i<=3; i++) {
-            int index = (r*3) + i;
-            row = row + "|| " + std::to_string(*this->fields[index]) + " ||";
+    for (int i=0; i<3; i++) {
+        for (int j=0; j<=2; j++) {
+            int index = i*3+j;
+            int num = (*this->fields)[index];
+            std::cout << num << " ";
         }
-        std::cout << row << std::endl;
+        std::cout << std::endl;
     }
+}
+
+void Playground::updatePlayground(int pos, int val) {
+    (*this->fields)[pos] = val;
 }

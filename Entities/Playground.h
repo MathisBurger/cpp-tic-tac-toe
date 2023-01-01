@@ -13,6 +13,7 @@ private:
 public:
     Playground();
     void printPlayground();
+    void updatePlayground(int pos, int val);
 };
 
 
