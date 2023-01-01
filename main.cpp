@@ -1,10 +1,11 @@
-#include "Entities/Playground.h"
+#include "Game/Game.h"
 
 int main()
 {
-    Playground playground = Playground();
-    playground.printPlayground();
-    playground.updatePlayground(2, 1);
-    playground.printPlayground();
+    Game game = Game();
+    game.startGame();
+    while (!game.checkGameOver()) {
+        game.nextStep();
+    }
     return 0;
 }

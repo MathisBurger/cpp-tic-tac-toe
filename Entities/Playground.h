@@ -14,6 +14,8 @@ public:
     Playground();
     void printPlayground();
     void updatePlayground(int pos, int val);
+
+    Playground(Playground *pPlayground);
 };
 
 
