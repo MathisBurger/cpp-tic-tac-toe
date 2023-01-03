@@ -10,7 +10,9 @@
 class Game {
 private:
     Playground* playground;
-    void promptInput();
+    char lastPlayer;
+    void promptInput(char player);
+    int resolvePlayer(char player);
 
 public:
     Game();

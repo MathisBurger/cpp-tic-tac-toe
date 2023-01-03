@@ -9,13 +9,14 @@
 class Playground {
 private:
     int* fields[9];
+    void printChar(char c);
 
 public:
     Playground();
     void printPlayground();
     void updatePlayground(int pos, int val);
-
-    Playground(Playground *pPlayground);
+    bool isOccupied(int pos);
+    bool isFieldFilled();
 };
 
 
