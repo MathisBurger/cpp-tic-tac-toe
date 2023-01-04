@@ -16,7 +16,7 @@ public:
     void printPlayground();
     void updatePlayground(int pos, int val);
     bool isOccupied(int pos);
-    bool isFieldFilled();
+    int getPlaygroundPos(int pos);
 };
 
 

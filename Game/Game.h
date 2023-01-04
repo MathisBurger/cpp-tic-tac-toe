@@ -5,11 +5,13 @@
 #ifndef TIC_TAC_TOE_GAME_H
 #define TIC_TAC_TOE_GAME_H
 #include "../Entities/Playground.h"
+#include "../Validator/GameOverValidator.h"
 
 
 class Game {
 private:
-    Playground* playground;
+    Playground* playground = new Playground();
+    GameOverValidator validator = GameOverValidator(playground);
     char lastPlayer;
     void promptInput(char player);
     int resolvePlayer(char player);

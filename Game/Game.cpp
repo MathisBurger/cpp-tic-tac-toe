@@ -6,7 +6,6 @@
 #include <iostream>
 
 Game::Game() {
-    this->playground = new Playground();
     this->lastPlayer = 'B';
 }
 
@@ -30,7 +29,7 @@ void Game::nextStep() {
 }
 
 bool Game::checkGameOver() {
-    if (this->playground->isFieldFilled()) {
+    if (this->validator.isFieldFilled()) {
         return true;
     }
 

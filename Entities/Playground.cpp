@@ -52,12 +52,6 @@ bool Playground::isOccupied(int pos) {
     return val > 0;
 }
 
-bool Playground::isFieldFilled() {
-    for (int i=0; i<9; i++) {
-        int val = (*this->fields)[i];
-        if (val == 0) {
-            return false;
-        }
-    }
-    return true;
+int Playground::getPlaygroundPos(int pos) {
+    return (*this->fields)[pos];
 }
