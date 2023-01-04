@@ -29,7 +29,23 @@ void Game::nextStep() {
 }
 
 bool Game::checkGameOver() {
+    if (this->validator.isDiagonalWinner()) {
+        int player = this->validator.getDiagonalWinner();
+        std::cout << "Player " << this->resolvePlayer(player) << " won!" << std::endl;
+        return true;
+    }
+    if (this->validator.isHorizontalWinner()) {
+        int player = this->validator.getHorizontalWinner();
+        std::cout << "Player " << this->resolvePlayer(player) << " won!" << std::endl;
+        return true;
+    }
+    if (this->validator.isVerticalWinner()) {
+        int player = this->validator.getVerticalWinner();
+        std::cout << "Player " << this->resolvePlayer(player) << " won!" << std::endl;
+        return true;
+    }
     if (this->validator.isFieldFilled()) {
+        std::cout << "It`s a draw!" << std::endl;
         return true;
     }
 
@@ -62,5 +78,16 @@ int Game::resolvePlayer(char player) {
             return 2;
         default:
             return 0;
+    }
+}
+
+char Game::resolvePlayer(int player) {
+    switch (player) {
+        case 1:
+            return 'A';
+        case 2:
+            return 'B';
+        default:
+            return 'x';
     }
 }

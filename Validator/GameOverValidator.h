@@ -14,6 +14,12 @@ private:
 public:
     GameOverValidator(Playground* playground);
     bool isFieldFilled();
+    bool isVerticalWinner();
+    int getVerticalWinner();
+    bool isHorizontalWinner();
+    int getHorizontalWinner();
+    bool isDiagonalWinner();
+    int getDiagonalWinner();
 };
 
 

@@ -15,6 +15,7 @@ private:
     char lastPlayer;
     void promptInput(char player);
     int resolvePlayer(char player);
+    char resolvePlayer(int player);
 
 public:
     Game();
