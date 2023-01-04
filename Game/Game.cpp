@@ -5,10 +5,16 @@
 #include "Game.h"
 #include <iostream>
 
+/**
+ * Game constructor
+ */
 Game::Game() {
     this->lastPlayer = 'B';
 }
 
+/**
+ * Starts the game by printing out most important information
+ */
 void Game::startGame() {
     std::cout << "Welcome to this amazing Tic Tac Toe game!" << std::endl;
     std::cout << "Player one: A; Player two: B" << std::endl;
@@ -16,6 +22,9 @@ void Game::startGame() {
     this->playground->printPlayground();
 }
 
+/**
+ * Goes on with the next step. Switches players and prompts for inputs
+ */
 void Game::nextStep() {
     if (this->lastPlayer == 'B') {
         this->promptInput('A');
@@ -28,6 +37,11 @@ void Game::nextStep() {
     }
 }
 
+/**
+ * Checks if the game is over.
+ *
+ * @return If the game is over
+ */
 bool Game::checkGameOver() {
     if (this->validator.isDiagonalWinner()) {
         int player = this->validator.getDiagonalWinner();
@@ -52,6 +66,11 @@ bool Game::checkGameOver() {
     return false;
 }
 
+/**
+ * Promts the user to input the number of the field he wants to occupy
+ *
+ * @param player The player that should be prompted
+ */
 void Game::promptInput(char player) {
     std::cout << "Player " << player << " please insert the field number you want to occupy:" << std::endl;
     char c;
@@ -70,6 +89,12 @@ void Game::promptInput(char player) {
     this->playground->updatePlayground(pos, playerAsInt);
 }
 
+/**
+ *  Resolves a player by the character
+ *
+ * @param player The player character
+ * @return The ID of the player
+ */
 int Game::resolvePlayer(char player) {
     switch (player) {
         case 'A':
@@ -81,6 +106,12 @@ int Game::resolvePlayer(char player) {
     }
 }
 
+/**
+ * Resolves a player by the ID
+ *
+ * @param player The player ID
+ * @return The character of the player
+ */
 char Game::resolvePlayer(int player) {
     switch (player) {
         case 1:

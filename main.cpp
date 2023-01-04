@@ -1,5 +1,10 @@
 #include "Game/Game.h"
 
+/**
+ * Main entrypoint
+ *
+ * @return
+ */
 int main()
 {
     Game game = Game();
